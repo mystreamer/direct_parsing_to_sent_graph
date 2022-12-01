@@ -1,10 +1,14 @@
 ## Fork Info
 -----
 Create the virtual environment for this repo using:<br>
-`python -m venv ~/envs/perin-venv`
+```
+python3 -m venv ~/envs/perin-venv \
+  && source ~/envs/perin-venv/bin/activate \
+  && pip install --upgrade pip
+```
 <br>
 Then <br>
-`pip install -r requirements.txt`
+`pip3 install -r requirements.txt`
 <br>
 <br>
 Execute the script, but first: `export CUDA_VISIBLE_DEVICES=6`
