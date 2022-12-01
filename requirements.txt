@@ -1,0 +1,5 @@
+pytorch==1.6.0
+transformers==4.5.1
+scipy==1.6.3
+sentencepiece==0.1.94
+nltk==3.7

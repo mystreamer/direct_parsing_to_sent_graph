@@ -1,3 +1,22 @@
+## Fork Info
+-----
+Create the virtual environment for this repo using:<br>
+`python -m venv ~/envs/perin-venv`
+<br>
+Then <br>
+`pip install -r requirements.txt`
+<br>
+<br>
+Execute the script, but first: `export CUDA_VISIBLE_DEVICES=6`
+
+Currently use:
+```sh
+cd perin
+./run.sh config/edge_multibooked_eu.yaml
+```
+
+----
+
 <h1 align="center"><b>Direct parsing to sentiment graphs</b></h1>
 
 <p align="center">
