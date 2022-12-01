@@ -62,6 +62,9 @@ def main(directory, args):
     print(f"\n\nMODEL: {model}\n", flush=True)
     log = Log(dataset, model, optimizer, args, directory, log_each=10, log_wandb=args.log_wandb)
 
+    # restrict the process from using too much memory
+    torch.cuda.set_per_process_memory_fraction(0.5, 0)
+
     device = torch.device(f"cuda:0" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
 
@@ -131,6 +134,7 @@ def main(directory, args):
 
 
 if __name__ == "__main__":
+    os.environ['CUDA_VISIBLE_DEVICES'] = '6'  # for one GPU
     args = parse_arguments()
 
     timestamp = f"{datetime.datetime.today():%m-%d-%y_%H-%M-%S}"

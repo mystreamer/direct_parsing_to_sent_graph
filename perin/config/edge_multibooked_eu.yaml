@@ -2,7 +2,7 @@ framework: multibooked
 language: eu
 graph_mode: labeled-edge
 
-encoder: /cluster/projects/nn9851k/models/xlm-roberta-base
+encoder: /srv/scratch6/massey/models/xlm-roberta-base
 epochs: 200
 n_layers: 0
 query_length: 2
