@@ -8,10 +8,16 @@ python3 -m venv ~/envs/perin-venv \
 ```
 <br>
 Then <br>
-`pip3 install -r requirements.txt`
+
+```
+pip3 install -r requirements.txt
+```
+
 <br>
 <br>
-Execute the script, but first: `export CUDA_VISIBLE_DEVICES=6`
+Execute the script, but first: 
+
+`export CUDA_VISIBLE_DEVICES=6`
 
 Currently use:
 ```sh
