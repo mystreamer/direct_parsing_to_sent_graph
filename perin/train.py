@@ -63,7 +63,7 @@ def main(directory, args):
     log = Log(dataset, model, optimizer, args, directory, log_each=10, log_wandb=args.log_wandb)
 
     # restrict the process from using too much memory
-    torch.cuda.set_per_process_memory_fraction(0.5, 0)
+    # torch.cuda.set_per_process_memory_fraction(0.5, 0)
 
     device = torch.device(f"cuda:0" if torch.cuda.is_available() else "cpu")
     model = model.to(device)
