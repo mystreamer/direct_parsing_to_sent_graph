@@ -57,6 +57,7 @@ class Params:
             ("norec", "no"): "norec",
             ("opener", "en"): "opener_en",
             ("opener", "es"): "opener_es",
+            ("silverstandard", "de"): "silverstandard",
         }[(self.framework, self.language)]
 
         self.training_data = f"{self.data_directory}/{directory_1}/{directory_2}/train.mrp"

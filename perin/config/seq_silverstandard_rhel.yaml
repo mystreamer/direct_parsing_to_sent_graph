@@ -1,5 +1,5 @@
-framework: multibooked
-language: eu
+framework: silverstandard 
+language: de 
 graph_mode: sequential
 
 encoder: /home/parallels/models/xlm-roberta-base

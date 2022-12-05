@@ -3,6 +3,8 @@
 
 The architecture is based on [xlm-roberta-base](https://huggingface.co/xlm-roberta-base), hence we must make sure to have access to a downloaded roberta version. Install here (needs lfs): <br>
 
+Use the notebook `perin_preprocessing.ipynb` to bring the stancer data into a form accepted by PERIN.
+
 ```
 git lfs install
 git clone https://huggingface.co/xlm-roberta-base
@@ -32,9 +34,9 @@ Execute the script, but first:
 Currently use (we are interested in seq. / opinion-tuple):
 ```sh
 cd perin
-./run.sh config/seq_multibooked_eu_rhel.yaml
+./run.sh config/seq_silverstandard_rhel.yaml
 or
-./run.sh config/seq_multibooked_eu_rattle.yaml
+./run.sh config/seq_silverstandard_rattle.yaml
 ```
 
 Use `./run_debug.sh [...]` to run with debugger.
