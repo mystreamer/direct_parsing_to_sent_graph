@@ -1,7 +1,8 @@
-torch==1.6.0
+torch
 transformers==4.25.0
 scipy==1.6.3
 sentencepiece==0.1.94
 nltk==3.7
 pillow
 pyyaml
+six

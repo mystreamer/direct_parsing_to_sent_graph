@@ -1,6 +1,17 @@
 ## Fork Info
 -----
+
+The architecture is based on [xlm-roberta-base](https://huggingface.co/xlm-roberta-base), hence we must make sure to have access to a downloaded roberta version. Install here (needs lfs): <br>
+
+```
+git lfs install
+git clone https://huggingface.co/xlm-roberta-base
+```
+
+Use script `convert_sentiment_data_to_mrp_format.sh` to convert the **raw** input format into **mrp** representation.
+
 Create the virtual environment for this repo using:<br>
+
 ```
 python3 -m venv ~/envs/perin-venv \
   && source ~/envs/perin-venv/bin/activate \
@@ -14,16 +25,19 @@ pip3 install -r requirements.txt
 ```
 
 <br>
-<br>
 Execute the script, but first: 
 
 `export CUDA_VISIBLE_DEVICES=6`
 
-Currently use:
+Currently use (we are interested in seq. / opinion-tuple):
 ```sh
 cd perin
-./run.sh config/edge_multibooked_eu.yaml
+./run.sh config/seq_multibooked_eu_rhel.yaml
+or
+./run.sh config/seq_multibooked_eu_rattle.yaml
 ```
+
+Use `./run_debug.sh [...]` to run with debugger.
 
 ----
 
