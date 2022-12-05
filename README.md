@@ -41,6 +41,8 @@ or
 
 Use `./run_debug.sh [...]` to run with debugger.
 
+**Use** mtools *norec codec* write to convert the labels generated from inference in in the model back to its raw format. See `perin/convert.sh`.
+
 ----
 
 <h1 align="center"><b>Direct parsing to sentiment graphs</b></h1>
