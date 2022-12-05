@@ -23,4 +23,4 @@ set -o nounset  # Treat any unset variables as an error
 # module load nlpl-nltk/3.5-gomkl-2019b-Python-3.7.4
 
 # TRANSFORMERS_OFFLINE=1 WANDB_MODE=offline python3 train.py --log_wandb --config "$1"
-TRANSFORMERS_OFFLINE=1 WANDB_MODE=offline python3 -m ipdb train.py --config "$1"
+TRANSFORMERS_OFFLINE=1 WANDB_MODE=offline python3 -m pdb train.py --config "$1"

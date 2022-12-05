@@ -10,6 +10,8 @@ class SequentialParser(AbstractParser):
         assert part == "training" or part == "validation"
         path = args.training_data if part == "training" else args.validation_data
 
+        # breakpoint()
+
         self.data = utils.load_dataset(path)
         utils.anchor_ids_from_intervals(self.data)
 
