@@ -5,6 +5,8 @@ The architecture is based on [xlm-roberta-base](https://huggingface.co/xlm-rober
 
 Use the notebook `perin_preprocessing.ipynb` to bring the stancer data into a form accepted by PERIN.
 
+Clear the ./outputs directory before a new experiment and make sure the model from previous is saved.
+
 ```
 git lfs install
 git clone https://huggingface.co/xlm-roberta-base
