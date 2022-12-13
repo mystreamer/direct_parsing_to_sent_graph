@@ -1,6 +1,14 @@
 ## Fork Info
 -----
 
+To use [wandb](https://wandb.ai) you need to:
+```
+wandb login
+[enter api key]
+[run script with --log_wandb flag]
+wandb sync
+```
+
 `cd` into repo. 
 
 The architecture is based on [xlm-roberta-base](https://huggingface.co/xlm-roberta-base), hence we must make sure to have access to a downloaded roberta version. Install here (needs lfs): <br>
