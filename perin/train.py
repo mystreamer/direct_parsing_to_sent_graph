@@ -32,7 +32,7 @@ def parse_arguments():
     parser.add_argument("--save_checkpoints", dest="save_checkpoints", action="store_true", default=False)
     parser.add_argument("--seed", dest="seed", type=int, default=17181920)
     parser.add_argument("--log_wandb", dest="log_wandb", action="store_true", default=False)
-    parser.add_argument("--validate_each", type=int, default=10, help="Validate every ${N}th epoch.")
+    parser.add_argument("--validate_each", type=int, default=5, help="Validate every ${N}th epoch.")
     parser.add_argument("--wandb_log_mode", type=str, default=None, help="How to log the model weights, supported values: {'all', 'gradients', 'parameters', None}")
     parser.add_argument("--workers", type=int, default=1, help="number of CPU workers per GPU.")
     args = parser.parse_args()
