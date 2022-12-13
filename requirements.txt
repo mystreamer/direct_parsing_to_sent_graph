@@ -6,3 +6,4 @@ nltk==3.7
 pillow
 pyyaml
 six
+wandb
