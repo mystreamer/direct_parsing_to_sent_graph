@@ -51,6 +51,8 @@ cd perin
 ./run.sh config/seq_silverstandard_rhel.yaml
 or
 ./run.sh config/seq_silverstandard_rattle.yaml
+or
+./run.sh config/seq_silverstandard_rattle_frozen.yaml
 ```
 
 Use `./run_debug.sh [...]` to run with debugger.
