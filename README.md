@@ -1,6 +1,8 @@
 ## Fork Info
 -----
 
+`cd` into repo. 
+
 The architecture is based on [xlm-roberta-base](https://huggingface.co/xlm-roberta-base), hence we must make sure to have access to a downloaded roberta version. Install here (needs lfs): <br>
 
 Use the notebook `perin_preprocessing.ipynb` to bring the stancer data into a form accepted by PERIN.
@@ -10,6 +12,15 @@ Clear the ./outputs directory before a new experiment and make sure the model fr
 ```
 git lfs install
 git clone https://huggingface.co/xlm-roberta-base
+```
+
+Pull all recent data from the etl_pipeline into the repository:
+<br>
+
+```bash
+cp ../../etl/data/processed/Perin_Preprocessing/01_train.json data/raw/silverstandard/train.json && \
+cp ../../etl/data/processed/Perin_Preprocessing/01_test.json data/raw/silverstandard/test.json && \
+cp ../../etl/data/processed/Perin_Preprocessing/01_val.json data/raw/silverstandard/dev.json
 ```
 
 Use script `convert_sentiment_data_to_mrp_format.sh` to convert the **raw** input format into **mrp** representation.
@@ -29,10 +40,11 @@ pip3 install -r requirements.txt
 ```
 
 <br>
-Execute the script, but first: 
+Then:
 
 `export CUDA_VISIBLE_DEVICES=6`
 
+Then:
 Currently use (we are interested in seq. / opinion-tuple):
 ```sh
 cd perin
@@ -43,7 +55,7 @@ or
 
 Use `./run_debug.sh [...]` to run with debugger.
 
-**Use** mtools *norec codec* write to convert the labels generated from inference in in the model back to its raw format. See `perin/convert.sh`.
+**Use** mtools *norec codec* write to convert the labels generated from inference via the model back to its raw format. See `perin/convert.sh`.
 
 ----
 
