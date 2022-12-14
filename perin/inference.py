@@ -33,4 +33,5 @@ if __name__ == "__main__":
     directory = "./inference_prediction"
     os.makedirs(directory, exist_ok=True)
     print("inference of validation data", flush=True)
-    predict(model, dataset.val, args.validation_data, args.raw_validation_data, args, None, directory, device)
+    res = predict(model, dataset.val, args.test_data, args.raw_test_data, args, None, directory, device)
+    print("Sentiment Tuple F1 (labeled?)", res)

@@ -66,6 +66,7 @@ class Params:
 
         self.raw_training_data = f"{self.data_directory}/raw/{directory_2}/train.json"
         self.raw_validation_data = f"{self.data_directory}/raw/{directory_2}/dev.json"
+        self.raw_test_data = f"{self.data_directory}/raw/{directory_2}/test.json"
 
         return self
 

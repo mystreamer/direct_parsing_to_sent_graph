@@ -66,6 +66,14 @@ or
 Use `./run_debug.sh [...]` to run with debugger.
 
 **Use** mtools *norec codec* write to convert the labels generated from inference via the model back to its raw format. See `perin/convert.sh`.
+(*this is not really necessary, since this step is taken byitself when training*)
+
+You can run the inference on the validation and test datasets by running:
+```sh
+python3 inference.py --checkpoint "path_to_pretrained_model.h5" --data_directory ${data_dir}
+In our case:
+python3 inference.py --checkpoint "../outputs/silverstandard[...]/checkpoint.bin" --data_directory "../data"
+```
 
 ----
 
