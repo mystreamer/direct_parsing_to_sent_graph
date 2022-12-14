@@ -276,6 +276,7 @@ def main():
         "opener_es",
         "mpqa",
         "darmstadt_unis",
+        "silverstandard",
     ]
     crosslingual_datasets = [
         "opener_es",
