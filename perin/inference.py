@@ -40,5 +40,7 @@ if __name__ == "__main__":
     except AttributeError:
         print("No raw test data path could be found, did you init the data paths?")
 
-    res = predict(model, dataset.val, args.test_data, args.raw_test_data, args, None, directory, device)
+    # breakpoint()
+
+    res = predict(model, dataset.test, args.test_data, args.raw_test_data, args, None, directory, device, mode="test")
     print("Sentiment Tuple F1 (labeled?)", res)
