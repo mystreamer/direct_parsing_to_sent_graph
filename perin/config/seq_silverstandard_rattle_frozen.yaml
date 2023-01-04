@@ -2,7 +2,7 @@ framework: silverstandard
 language: de
 graph_mode: sequential
 
-encoder: /srv/scratch6/massey/models/xlm-roberta-base
+encoder: /srv/scratch1/massey/models/xlm-roberta-base
 epochs: 30
 freeze_bert: true
 n_layers: 0
