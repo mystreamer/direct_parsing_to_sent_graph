@@ -72,6 +72,9 @@ class Params:
 
     def load_state_dict(self, d):
         for k, v in d.items():
+            # fixes problem with checkpoint managed before scratch migration
+            if k == "encoder" and v == "/srv/scratch6/massey/models/xlm-roberta-base":
+                v = "/srv/scratch1/massey/models/xlm-roberta-base"
             setattr(self, k, v)
         return self
 

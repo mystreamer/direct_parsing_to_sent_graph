@@ -72,7 +72,7 @@ You can run the inference on the validation and test datasets by running:
 ```sh
 python3 inference.py --checkpoint "path_to_pretrained_model.h5" --data_directory ${data_dir}
 In our case:
-python3 inference.py --checkpoint "../outputs/silverstandard[...]/checkpoint.bin" --data_directory "../data"
+python3 inference.py --checkpoint "../outputs/silverstandard[...]/checkpoint.bin" # leave this away --data_directory "../data"
 ```
 
 ----
