@@ -3,7 +3,7 @@ language: de
 graph_mode: sequential
 
 encoder: /srv/scratch1/massey/models/xlm-roberta-base
-epochs: 100
+epochs: 20 # old value = 100
 freeze_bert: false
 n_layers: 0
 query_length: 1
