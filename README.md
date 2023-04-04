@@ -31,7 +31,16 @@ cp ../../etl/data/processed/Perin_Preprocessing/01_test.json data/raw/silverstan
 cp ../../etl/data/processed/Perin_Preprocessing/01_val.json data/raw/silverstandard/dev.json
 ```
 
-Use script `convert_sentiment_data_to_mrp_format.sh` to convert the **raw** input format into **mrp** representation.
+Verify the files were correctly moved and are up-to-date with:
+```
+ls -l data/raw/silverstandard
+```
+
+Call
+```
+./convert_sentiment_data_to_mrp_format.sh
+``` 
+to convert the **raw** input format into **mrp** representation.
 
 Create the virtual environment for this repo using:<br>
 
@@ -50,7 +59,9 @@ pip3 install -r requirements.txt
 <br>
 Then:
 
-`export CUDA_VISIBLE_DEVICES=6`
+```
+export CUDA_VISIBLE_DEVICES=6
+```
 
 Then:
 Currently use (we are interested in seq. / opinion-tuple):
@@ -73,6 +84,13 @@ You can run the inference on the validation and test datasets by running:
 python3 inference.py --checkpoint "path_to_pretrained_model.h5" --data_directory ${data_dir}
 In our case:
 python3 inference.py --checkpoint "../outputs/silverstandard[...]/checkpoint.bin" # leave this away --data_directory "../data"
+```
+
+Alternatively you can directly run the evaluation using (this will not launch inference again, since this is done at the end of the training run for the test set):
+```sh
+# make sure to be in perin directory
+cd ../evaluation
+python evaluate_single_dataset.py ../data/raw/silverstandard/test.json ../outputs/silverstandard[...]/test_predictions/prediction.json_converted
 ```
 
 ----
