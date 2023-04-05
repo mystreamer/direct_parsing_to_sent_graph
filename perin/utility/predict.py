@@ -10,7 +10,7 @@ sys.path.append("../evaluation")
 from evaluate_single_dataset import evaluate
 
 
-def predict(model, data, input_path, raw_input_path, args, logger, output_directory, device, mode="validation", epoch=None):
+def predict(model, data, input_path, raw_input_path, args, logger, output_directory, device, mode="validation", epoch=None, relaxed=False):
     model.eval()
 
     framework, language = args.framework, args.language
@@ -43,7 +43,7 @@ def predict(model, data, input_path, raw_input_path, args, logger, output_direct
     run(["./convert.sh", output_path] + (["--node_centric "] if args.graph_mode != "labeled-edge" else []))
 
     if raw_input_path:
-        results = evaluate(raw_input_path, f"{output_path}_converted")
+        results = evaluate(raw_input_path, f"{output_path}_converted", relaxed)
         print(mode, results, flush=True)
 
         if logger is not None:

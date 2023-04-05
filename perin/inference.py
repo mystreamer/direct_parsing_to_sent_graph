@@ -16,8 +16,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--checkpoint", type=str, required=True)
     # parser.add_argument("--data_directory", type=str, default="../data")
+    # add option to set relaxed mode
+    parser.add_argument("--relaxed", action="store_true", help="relaxed mode")
     args = parser.parse_args()
-
+    relaxed_arg=args.relaxed
     checkpoint = torch.load(args.checkpoint)
     args = Params().load_state_dict(checkpoint["params"])
     args = args.init_data_paths()
@@ -43,5 +45,5 @@ if __name__ == "__main__":
 
     # breakpoint()
 
-    res = predict(model, dataset.test, args.test_data, args.raw_test_data, args, None, directory, device, mode="test")
+    res = predict(model, dataset.test, args.test_data, args.raw_test_data, args, None, directory, device, mode="test", relaxed=relaxed_arg)
     print("Sentiment Tuple F1 (labeled?)", res)
