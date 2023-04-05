@@ -3,7 +3,7 @@ from evaluate import convert_opinion_to_tuple, tuple_f1, span_f1
 import argparse
 
 
-def evaluate(gold_file, pred_file, relaxed):
+def evaluate(gold_file, pred_file, relaxed=False):
     with open(gold_file) as o:
         gold = json.load(o)
 
