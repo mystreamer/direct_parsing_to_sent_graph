@@ -76,6 +76,19 @@ or
 
 Use `./run_debug.sh [...]` to run with debugger.
 
+### Working with Gold Standard and other datasets
+-----
+
+Convert the dataset to the necessary format -> `Node-centric`
+
+(We just move these files so that they are a replacement of the test files)
+
+```
+mkdir ../outputs/silverstandard[...]/goldstandard
+cp ../../etl/data/processed/Perin_Preprocessing/pro_con_500.json data/raw/silverstandard/test.json
+python3 mtool/main.py --node_centric --strings --ids --read norec --write mrp "data/raw/silverstandard/test.json" "data/node_centric_mrp/silverstandard/test.json"
+```
+
 **Use** mtools *norec codec* write to convert the labels generated from inference via the model back to its raw format. See `perin/convert.sh`.
 (*this is not really necessary, since this step is taken byitself when training*)
 

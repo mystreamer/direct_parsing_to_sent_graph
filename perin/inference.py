@@ -37,6 +37,7 @@ if __name__ == "__main__":
     # quickly fix the missing "raw test data" params in the checkpointed model
     try :
         raw_test_data = args.raw_test_data
+        print(raw_test_data)
     except AttributeError:
         print("No raw test data path could be found, did you init the data paths?")
 
