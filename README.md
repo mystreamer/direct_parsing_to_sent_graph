@@ -84,9 +84,10 @@ Convert the dataset to the necessary format -> `Node-centric`
 (We just move these files so that they are a replacement of the test files)
 
 ```
-mkdir ../outputs/silverstandard[...]/goldstandard
 cp ../../etl/data/processed/Perin_Preprocessing/pro_con_500.json data/raw/silverstandard/test.json
-python3 mtool/main.py --node_centric --strings --ids --read norec --write mrp "data/raw/silverstandard/test.json" "data/node_centric_mrp/silverstandard/test.json"
+ls -l data/raw/silverstandard/
+python3 mtool/main.py --node_centric --strings --ids --read norec --write mrp "data/raw/silverstandard/test.json" "data/node_centric_mrp/silverstandard/test.mrp"
+ls -l data/node_centric_mrp/silverstandard
 ```
 
 **Use** mtools *norec codec* write to convert the labels generated from inference via the model back to its raw format. See `perin/convert.sh`.
