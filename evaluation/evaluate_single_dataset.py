@@ -28,6 +28,7 @@ def evaluate(gold_file, pred_file, relaxed=False):
 
     if g != p:
         print("Missing some sentences!")
+        print("Missing: ", set(g).symmetric_difference(set(p)))
         return 0.0, 0.0, 0.0
     
     # for each sentence, tokenize it , get the labels for each token
