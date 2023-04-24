@@ -20,7 +20,11 @@ if __name__ == "__main__":
     parser.add_argument("--relaxed", action="store_true", help="relaxed mode")
     args = parser.parse_args()
     relaxed_arg=args.relaxed
-    checkpoint = torch.load(args.checkpoint)
+    if torch.cuda.is_available():
+        checkpoint = torch.load(args.checkpoint)
+    else:
+        checkpoint = torch.load(args.checkpoint, map_location ='cpu')
+
     args = Params().load_state_dict(checkpoint["params"])
     args = args.init_data_paths()
     args.log_wandb = False
