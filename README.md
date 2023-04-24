@@ -26,6 +26,9 @@ Pull all recent data from the etl_pipeline into the repository:
 <br>
 
 ```bash
+# check if files were successfully uploaded
+ls -l ../../etl/data/processed/Perin_Preprocessing
+
 cp ../../etl/data/processed/Perin_Preprocessing/01_train.json data/raw/silverstandard/train.json && \
 cp ../../etl/data/processed/Perin_Preprocessing/01_test.json data/raw/silverstandard/test.json && \
 cp ../../etl/data/processed/Perin_Preprocessing/01_val.json data/raw/silverstandard/dev.json
@@ -39,6 +42,8 @@ ls -l data/raw/silverstandard
 Call
 ```
 ./convert_sentiment_data_to_mrp_format.sh
+# Verify conversion:
+ls -l data/node_centric_mrp/silverstandard
 ``` 
 to convert the **raw** input format into **mrp** representation.
 
@@ -60,7 +65,7 @@ pip3 install -r requirements.txt
 Then:
 
 ```
-export CUDA_VISIBLE_DEVICES=6
+export CUDA_VISIBLE_DEVICES=5
 ```
 
 Then:
@@ -96,8 +101,8 @@ ls -l data/node_centric_mrp/silverstandard
 You can run the inference on the validation and test datasets by running:
 ```sh
 python3 inference.py --checkpoint "path_to_pretrained_model.h5" --data_directory ${data_dir}
-In our case:
-python3 inference.py --checkpoint "../outputs/silverstandard[...]/checkpoint.bin" # leave this away --data_directory "../data"
+# In our case:
+python3 inference.py --checkpoint "../outputs/silverstandard[...]/checkpoint.bin" # add --relaxed if working with the gold standard, leave this away --data_directory "../data"
 ```
 
 Alternatively you can directly run the evaluation using (this will not launch inference again, since this is done at the end of the training run for the test set):
